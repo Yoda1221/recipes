@@ -1,10 +1,11 @@
-# recipes
+# RECIPES APP
 
 
-## Client (REact Js)
+## Client (React Js)
 - npx create-react-app ./  -y
-- npm i react-router-dom i sass
-- npm i framer-motion react-icons
+- npm i react-router-dom sass
+- npm i framer-motion react-icons 
+- npm install react-bootstrap bootstrap
 
 
 - npm i @mui/material @emotion/react @emotion/styled

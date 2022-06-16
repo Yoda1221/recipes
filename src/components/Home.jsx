@@ -1,8 +1,11 @@
 import React from 'react'
+import { Container }  from 'react-bootstrap'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <Container className='p-3 mt-5'>
+      Home
+    </Container>
   )
 }
 
