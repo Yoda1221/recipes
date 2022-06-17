@@ -1,5 +1,10 @@
 # RECIPES APP
 
+# Pages
+[Splide Js](https://splidejs.com/)
+
+## Youtube
+[Build A Full Recipe App Tutorial](https://www.youtube.com/watch?v=xc4uOzlndAk)
 
 ## Client (React Js)
 - npx create-react-app ./  -y

@@ -14,7 +14,6 @@
         display: flex;
         cursor: pointer;
         border-radius: 50%;
-        margin-right: 2rem;
         align-items: center;
         transform: scale(0.8);
         text-decoration: none;
@@ -27,12 +26,14 @@
             font-size: 0.8rem;
             margin-top: 0.5rem;
         }
+
         svg {
             color: $bgColor;
             font-size: 1.5rem;
         }
+        
         &.active {
-            background: linear-gradient(to right, #f27121, #e94057);
+            background: $color_01;
         }
     
     }

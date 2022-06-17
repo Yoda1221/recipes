@@ -1,11 +1,12 @@
-import { FaPizzaSlice } from 'react-icons/fa'
-import { TbSoup } from 'react-icons/tb'
+import { FaPizzaSlice }         from 'react-icons/fa'
+import { BiHomeSmile }          from 'react-icons/bi'
+import { TbSoup }               from 'react-icons/tb'
 import { GiCupcake, GiHotMeal } from 'react-icons/gi'
-import { NavLink } from 'react-router-dom'
-import { ListGroup } from 'react-bootstrap'
-import { Container }  from 'react-bootstrap'
+import { ListGroup }            from 'react-bootstrap'
+import { Container }            from 'react-bootstrap'
+import { NavLink }              from 'react-router-dom'
 
-// édes sütik : s, kevert sütik: k, sós sütik: o
+//** édes sütik : s, kevert sütik: k, sós sütik: o
 const TYPES = Object.freeze({
     soup: "l",
     cake: "s",
@@ -13,10 +14,11 @@ const TYPES = Object.freeze({
     other: "e"
 })
 const navItems = [
-    { display: "Levesek",   path: `/specfood/${TYPES.soup}`, icon: TbSoup },
-    { display: "Sütik",     path: `/specfood/${TYPES.cake}`, icon: GiCupcake },
-    { display: "Főételek",  path: `/specfood/${TYPES.main}`, icon: GiHotMeal },
-    { display: "Egyéb",     path: `/specfood/${TYPES.other}`, icon: FaPizzaSlice }
+    { display: "Home",      path: `/`,                          icon: BiHomeSmile },
+    { display: "Levesek",   path: `/specfood/${TYPES.soup}`,    icon: TbSoup },
+    { display: "Sütik",     path: `/specfood/${TYPES.cake}`,    icon: GiCupcake },
+    { display: "Főételek",  path: `/specfood/${TYPES.main}`,    icon: GiHotMeal },
+    { display: "Egyéb",     path: `/specfood/${TYPES.other}`,   icon: FaPizzaSlice }
 ]
 
 const Categories = () => {

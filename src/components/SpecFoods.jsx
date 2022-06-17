@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { Col, Card, Container, Row }  from 'react-bootstrap'
-import { motion } from 'framer-motion'
-import noimage                        from '../img/noimage.jpg'
+import { useEffect, useState }          from 'react'
+import TABLES                           from '../config'
+import { motion }                       from 'framer-motion'
+import { Col, Card, Container, Row }    from 'react-bootstrap'
+import { useParams }                    from 'react-router-dom'
+import noimage                          from '../img/noimage.jpg'
 
 const SpecFoods = () => {
-    const recipes   = JSON.parse(localStorage.getItem('recipes'))
+    const param     = useParams()
+    const recipes   = JSON.parse(localStorage.getItem(TABLES.recepts))
     const [specFood, setSpecFood] = useState(null)
-    const param = useParams()
     
     const searchSpecFood = (type) => {
         const filtered = recipes.filter( recipe => recipe.tipus.includes(type) )
@@ -17,8 +18,6 @@ const SpecFoods = () => {
     useEffect(() => {
         searchSpecFood(param.type)
     }, [param.type])
-    
-    console.log(specFood)
 
   return (
     <Container className='my-5'>
@@ -51,7 +50,6 @@ const SpecFoods = () => {
                     </Card.Footer>
                 </Card>
             ))}
-
         </div>
     </Container>
   )

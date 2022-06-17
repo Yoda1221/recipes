@@ -1,5 +1,5 @@
+import { FaSearch }                     from 'react-icons/fa'
 import { Container, Form, InputGroup }  from 'react-bootstrap'
-import { FaSearch } from 'react-icons/fa'
 
 const Search = () => {
     return (
