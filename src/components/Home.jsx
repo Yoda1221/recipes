@@ -5,7 +5,6 @@ import noimage                        from '../img/noimage.jpg'
 import { Splide, SplideSlide }        from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 
-
 const tables = [
   {tableName: TABLES.recepts},
   {tableName: TABLES.hozzavalok}
@@ -21,7 +20,7 @@ const Home = () => {
 
     if (check && icheck) {
       setRecipes(JSON.parse(check))
-      setRecipes(JSON.parse(icheck))
+      setIngredients(JSON.parse(icheck))
     } else {
       tables.map( async table => {
         const data  = await fetch(`${process.env.REACT_APP_SERVER_URL}/getData`, {
@@ -49,7 +48,7 @@ const Home = () => {
   useEffect(() => {
     getAllRecipes()
   }, [])
-  
+
   return (
     <Container className='p-3 mt-5'>
       <Splide options={{ 
@@ -65,7 +64,15 @@ const Home = () => {
           return (
             <SplideSlide key={ item.id }>
               <Card style={{ minHeight: '250px', borderRadius: '20px', overflow: 'hidden' }}>
-                <Card.Img variant="top" src={ noimage } alt={ item.nev }/>
+                <Card.Img 
+                  variant="top" 
+                  src={ 
+                    item.image != null ? process.env.REACT_APP_IMG_URL + item.image : noimage
+                  } 
+                  height= "200px"
+                  style={{ ojectFit: "cover"}}
+                  alt={ item.nev }
+                />
                 <Card.Body>
                   <Card.Title>{ item.nev }</Card.Title>
                   <Card.Text>{ item.description }</Card.Text>

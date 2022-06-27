@@ -4,6 +4,7 @@ import { motion }                       from 'framer-motion'
 import { Col, Card, Container, Row }    from 'react-bootstrap'
 import { useParams }                    from 'react-router-dom'
 import noimage                          from '../img/noimage.jpg'
+import RecipeCard from './RecipeCard'
 
 const SpecFoods = () => {
     const param     = useParams()
@@ -23,32 +24,7 @@ const SpecFoods = () => {
     <Container className='my-5'>
         <div className='grid'>
             {specFood && specFood.map( item => (
-                <Card key={ item.id } style={{ minHeight: '250px', borderRadius: '20px', overflow: 'hidden' }}>
-                    <Card.Img variant="top" src={ noimage } alt={ item.nev }/>
-                    <Card.Body>
-                        <Card.Title>{ item.nev }</Card.Title>
-                        <Card.Text>{ item.description }</Card.Text>
-                    </Card.Body>
-                    <Card.Footer >
-                        <Row>
-                        <Col md={6}>
-                            <small className="text-muted">
-                            Hőfok: { item.hofok } °C
-                            </small>
-                        </Col>
-                        <Col md={6}>
-                            <small className="text-muted">
-                            Sütési idő: { item.sutesido } min
-                            </small>
-                        </Col>
-                        <Col md={12}>
-                            <small className="text-muted">
-                            Macerás? { item.macera }
-                            </small>
-                        </Col>
-                        </Row>
-                    </Card.Footer>
-                </Card>
+                <RecipeCard key={ item.id } item={ item } />
             ))}
         </div>
     </Container>

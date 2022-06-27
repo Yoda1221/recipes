@@ -10,23 +10,30 @@ import { NavLink }              from 'react-router-dom'
 const TYPES = Object.freeze({
     soup: "l",
     cake: "s",
+    cakek: "k",
+    cakeo: "o",
     main: "h",
     other: "e"
 })
 const navItems = [
-    { display: "Home",      path: `/`,                          icon: BiHomeSmile },
-    { display: "Levesek",   path: `/specfood/${TYPES.soup}`,    icon: TbSoup },
-    { display: "Sütik",     path: `/specfood/${TYPES.cake}`,    icon: GiCupcake },
-    { display: "Főételek",  path: `/specfood/${TYPES.main}`,    icon: GiHotMeal },
-    { display: "Egyéb",     path: `/specfood/${TYPES.other}`,   icon: FaPizzaSlice }
+    { id: 1, display: "Home",      path: `/`,                           icon: BiHomeSmile },
+    { id: 2, display: "Levesek",   path: `/specfood/${TYPES.soup}`,     icon: TbSoup },
+    { id: 3, display: "Sütik",     path: `/specfood/${TYPES.cake}`,     icon: GiCupcake },
+    { id: 4, display: "Főételek",  path: `/specfood/${TYPES.main}`,     icon: GiHotMeal },
+    { id: 5, display: "Egyéb",     path: `/specfood/${TYPES.other}`,    icon: FaPizzaSlice }
+]
+const navCookies = [
+    { id: 1, display: "Édes sütik",     path: `/specfood/${TYPES.cake}`,    icon: BiHomeSmile },
+    { id: 2, display: "Sós sütik",      path: `/specfood/${TYPES.cakek}`,   icon: BiHomeSmile },
+    { id: 3, display: "Kevert sütik",   path: `/specfood/${TYPES.cakeo}`,   icon: BiHomeSmile }
 ]
 
 const Categories = () => {
     return (
         <Container >
             <ListGroup horizontal className='listGroup'>
-                { navItems.map((item, index) => (
-                    <ListGroup.Item key={ index }>
+                { navItems.map((item) => (
+                    <ListGroup.Item key={ item.id }>
                         <NavLink className={"navLink"} to={item.path}>
                             {<item.icon />}
                             <h4>{item.display}</h4>
