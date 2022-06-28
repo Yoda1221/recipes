@@ -1,9 +1,8 @@
-import { useEffect, useState }          from 'react'
-import TABLES                           from '../config'
-import { motion }                       from 'framer-motion'
-import { Col, Card, Container, Row }    from 'react-bootstrap'
-import { useParams }                    from 'react-router-dom'
-import noimage                          from '../img/noimage.jpg'
+import { useEffect, useState } from 'react'
+import { TABLES }       from '../config'
+import { motion }       from 'framer-motion'
+import { Container }    from 'react-bootstrap'
+import { useParams }    from 'react-router-dom'
 import RecipeCard from './RecipeCard'
 
 const SpecFoods = () => {

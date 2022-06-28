@@ -1,5 +1,5 @@
 import { useEffect, useState }        from 'react'
-import TABLES                         from '../config'
+import { COMPLEX, TABLES }            from '../config'
 import { Col, Card, Container, Row }  from 'react-bootstrap'
 import noimage                        from '../img/noimage.jpg'
 import { Splide, SplideSlide }        from '@splidejs/react-splide'
@@ -32,16 +32,6 @@ const Home = () => {
         if (table.tableName === TABLES.recepts) setRecipes(jsonData) 
         if (table.tableName === TABLES.hozzavalok) setIngredients(jsonData) 
       })
-      /*
-      const data  = await fetch(`${process.env.REACT_APP_SERVER_URL}/getData`, {method: 'POST',headers: { 'Content-Type': 'application/json' },body: JSON.stringify({table: "recepts"})})
-      const r     = await data.json()
-      localStorage.setItem('recipes', JSON.stringify(r))
-      setRecipes(r)
-      const idata  = await fetch(`${process.env.REACT_APP_SERVER_URL}/getData`, method: 'POST',headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({table: "hozzavalok"})})
-      const ir    = await idata.json()
-      localStorage.setItem('hozzavalok', JSON.stringify(ir))
-      setIngredients(ir)
-      */
     }
   }
 
@@ -91,7 +81,7 @@ const Home = () => {
                     </Col>
                     <Col md={12}>
                       <small className="text-muted">
-                        Macerás? { item.macera }
+                        Elkészítés: { COMPLEX[item.macera] }
                       </small>
                     </Col>
                   </Row>

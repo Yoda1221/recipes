@@ -1,6 +1,6 @@
-import TABLES                 from '../config'
-import { GiKnifeFork }        from 'react-icons/gi'
-import { FiRefreshCw }        from 'react-icons/fi'
+import { TABLES }       from '../config'
+import { GiKnifeFork }  from 'react-icons/gi'
+import { FiRefreshCw }  from 'react-icons/fi'
 import { Button, Container, Navbar }  from 'react-bootstrap'
 
 const tables = [
